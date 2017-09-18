@@ -3,10 +3,13 @@ package baitap.gameloft.com.bai_tap_intent;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
     TextView tv;
+    Button btn_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,10 +18,26 @@ public class ResultActivity extends AppCompatActivity {
         Intent intent_nhan = getIntent();
         Bundle bun_nhan = intent_nhan.getBundleExtra("myPackage");
 
-        int a = bun_nhan.getInt("soA");
-        int b = bun_nhan.getInt("soB");
+        final int a = bun_nhan.getInt("soA");
+        final int b = bun_nhan.getInt("soB");
 
         giaiPT(a,b);
+
+        //----------------------------------------------------
+        btn_back = (Button)findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.change = 1;
+                Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+                Bundle bun_di = new Bundle();
+                bun_di.putInt("soA",a);
+                bun_di.putInt("soB",b);
+                intent.putExtra("myPackage",bun_di);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
