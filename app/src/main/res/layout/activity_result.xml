@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="baitap.gameloft.com.bai_tap_intent.ResultActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="KẾT QUẢ GIẢI"
+        android:textAlignment="center"
+        android:background="#FFFF00"
+        android:textSize="30dp"
+        />
+    <TextView
+        android:id="@+id/edt_kq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kết quả "
+        android:padding="5dp"
+        android:textColor="#000000"
+        />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:text="BACK"
+        android:textColor="#ffffff"
+        />
+
+</LinearLayout>
